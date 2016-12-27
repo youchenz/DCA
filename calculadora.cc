@@ -37,8 +37,16 @@ int main() {
 			cin >> op1;
 			cout << "  Introduce el segundo operando: " ;
 			cin >> op2;
+			if(n==1)
+				cout << Suma(op1,op2) << endl;
+			else if(n==2)
+				cout << Resta(op1,op2) << endl;
+			else if(n==3)
+				cout << Resta(op1,op2) << endl;
+			else if(n==4)
+				cout << Resta(op1,op2) << endl;
 		}
-	}while(n<0 || n > 4);
+	}while(n>0 && n<5);
 	
 	return 0;
 	
