@@ -26,11 +26,11 @@ int main() {
 	float resultado = 0;
 	do{
 		cout << "Calculadora:" << endl;
-		cout << "  1- Sumar." << endl;
-		cout << "  2- Restar." << endl;
-		cout << "  3- Multiplicar." << endl;
-		cout << "  4- Dividir." << endl;
-		cout << "  0- Salir." << endl;
+		cout << "1- Sumar." << endl;
+		cout << "2- Restar." << endl;
+		cout << "3- Multiplicar." << endl;
+		cout << "4- Dividir." << endl;
+		cout << "0- Salir." << endl;
 		cin >> n;
 		if(n>0 && n<5) {
 			cout << "  Introduce el primer operando: " ;
