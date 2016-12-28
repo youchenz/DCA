@@ -1,0 +1,59 @@
+-Creamos un nuevo proyecto en github
+https://github.com/youchenz/DCA
+
+-Despues en local creamos un directorio y lo clonamos:
+git clone https://github.com/youchenz/DCA.git
+
+-Indicamos nuestro correo y usuario:
+git config --global user.email "youchen_you@hotmail.com"
+git config --global user.name "youchenz"
+
+-Vamos a crear una version inicial:
+git add .
+git commit -m "DCA Sesion 10"
+
+-Crear alias locales y globales
+--locales
+git config alias.br branch
+git config alias.ch checkout
+--globales
+git config --global alias.co commit
+git config --global alias.pu push
+
+-Hemos provocado un fallo en un commit y vamos a buscarlo con git bisect
+-En total tenemos 6 commits, el 1,2,3 bien el 4 provoca el fallo y 
+-los 5,6 arrastran el fallo.
+--Empezamos git bisect
+git bisect start
+
+--Indicamos que el ultimo commit esta mal
+git bisect bad
+
+--Accedemos al siguiente
+git bisect next
+
+--La busqueda avanza a la mitad de los commits
+--En este caso al 3 que esta bien
+git bisect good
+
+--Ahora avanza al 5 que esta mal
+git bisect bad
+
+--Avanza al 4 que tambien esta mal
+git bisect bad
+
+--Git nos indica que el primer commit que falla es el
+--commit 522ab5d41cb3278b2b0a9c55b32ca2596a4cad55 que corresponde al 4.
+--git bisect a hecho una busqueda binaria para determinar el prier commit que falla
+--Empezo por el ultimo (6) que estaba mal
+--despues el 3 (la mitad) que estaba bien
+--el 5 (mitad de 4 5) que estaba mal
+--y finalmente el 4 que tambien estaba mal
+--Arreglamos el fallo en el siguieente commit.
+
+-Para usar git hooks
+-Hemos creado el archivo pre-commit con un script en .git/hooks
+-y le damos permisos
+sudo chmod 755 .git/hooks/pre-commit
+
+-Ahora cada commit que hagammos tendra el nombre de la rama al principiio
