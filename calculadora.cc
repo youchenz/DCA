@@ -42,9 +42,9 @@ int main() {
 			else if(n==2)
 				cout << Resta(op1,op2) << endl;
 			else if(n==3)
-				cout << Resta(op1,op2) << endl;
+				cout << Multiplicacion(op1,op2) << endl;
 			else if(n==4)
-				cout << Resta(op1,op2) << endl;
+				cout << Division(op1,op2) << endl;
 		}
 	}while(n>0 && n<5);
 	
