@@ -25,7 +25,7 @@ int main() {
 	float op2;
 	float resultado = 0;
 	do{
-		cout << "Calculadora :" << endl;
+		cout << "Calculadora:" << endl;
 		cout << "1- Sumar." << endl;
 		cout << "2- Restar." << endl;
 		cout << "3- Multiplicar." << endl;
